@@ -726,8 +726,8 @@ while True:
             pass
         print(Fore.YELLOW+'[+]'+Fore.RESET+' Botnet yenilendi!')
     elif choices == 1:
-        if server == "Sunucu Yok" or server == "":
-            print(Fore.RED+'[-]'+Fore.RESET+' Sunucu yok!')
+        if server == "Sunucu Yok" or server == "" or zombies_list == [] or zombies_list == ['\n'] or zombies == 0:
+            print(Fore.RED+'[-]'+Fore.RESET+' Sunucu ve ya zombiler yok!')
         else:
             devs = 0
             print('----------------------------------------')
