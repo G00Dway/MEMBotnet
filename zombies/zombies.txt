@@ -1,0 +1,1 @@
+Adlandırılmış zombies dosyası var: "zm.log"
