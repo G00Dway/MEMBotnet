@@ -5,6 +5,7 @@ import os
 import tkinter
 from tkinter import Tk
 import colorama
+import time
 try:
     import win10toast
 except ImportError:
@@ -43,6 +44,7 @@ def menu(host=scan):
             print(Fore.YELLOW+"[+]"+Fore.RESET+f" Port {port} açık")
     for port in range (1, 1000):
         portscanner(port);
+    time.sleep(5)
     sys.exit()
 
 
