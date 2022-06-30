@@ -6,7 +6,7 @@
 ```
 git clone https://github.com/G00Dway/MEMBotnet
 cd MEMBotnet
-python/python3 membotnet.py
+python/python3 membotnet.py (optimizasyon için vs kodunda çalıştırmak daha iyidir!)
 ```
 ### Linux / GNU
 ```
