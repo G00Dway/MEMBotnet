@@ -695,7 +695,7 @@ while True:
                 try:
                     with open(current_path+'/zombies/server.log', 'a') as srv:
                         srv.write(str(server_name)+'\n')
-                    with open(current_path+'/zombies/port.log', 'a') as prt:
+                    with open(current_path+'/zombies/ports.log', 'a') as prt:
                         prt.write(server_name+':'+server_port)
                 except:
                     pass
