@@ -183,7 +183,7 @@ def check_updates():
         print(Fore.RED+'[-]'+Fore.RESET+' Yeni sürüm için kontrol edemiyorum, error: '+str(e))
     if "404" in site.text:
         print(Fore.RED+'[-]'+Fore.RESET+' Hata, yeni sürüm için kontrol edemiyorum, error: "404"')
-    elif site.text == version:
+    elif site.text <= version:
         print(Fore.BLUE+'[i]'+Fore.RESET+' Yeni sürüm yok, bu en son sürüm!')
     else:
         print(Fore.YELLOW+'[+]'+Fore.RESET+' Yeni sürüm var, sürüm: '+site.text+', birçok hata düzeltmesi ve daha fazlası!')
@@ -202,6 +202,12 @@ other = 0
 copy = 0
 addr = {}
 current = ""
+append_check = []
+for check in servers_list:
+    if check in append_check:
+        pass
+    else:
+        append_check.append(check)
 if len(servers_list) > 1:
     print('')
     print("SUNUCU SEÇİMi")
@@ -209,10 +215,11 @@ if len(servers_list) > 1:
     for s in servers_list:
         if s == current:
             continue
-        num += 1
-        print(f"{num}) SUNUCU --> {s} [{Fore.LIGHTRED_EX}OFFLINE{Fore.RESET}]")
-        current = s
-        addr[num] = s
+        else:
+            num += 1
+            print(f"{num}) SUNUCU --> {s} [{Fore.LIGHTRED_EX}OFFLINE{Fore.RESET}]")
+            current = s
+            addr[num] = s
     other = num
     other += 1
     print('-------------------------')
