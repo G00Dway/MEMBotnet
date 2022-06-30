@@ -11,6 +11,7 @@ import webbrowser
 file = sys.argv[0]
 import os
 import signal
+chars = ['YyesYESy', 'nNOnoN']
 try:
     import win10toast
 except ImportError:
