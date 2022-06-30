@@ -69,7 +69,6 @@ def listen_loop():
         host = socket.gethostname()
         addr = socket.gethostbyname(host)
         all_addr = socket.gethostbyname_ex(host)
-        name = socket.getfqdn()
         try:
             with open(current_path+'/server/cmd.log', 'r') as f:
                 log = f.read()
@@ -98,5 +97,6 @@ def listen_loop():
 
 if listen_port == 0 and local == "0":
     menu()
-else:
-    listen_loop()
+
+
+listen_loop()
