@@ -1,5 +1,5 @@
 # MEMBotnet
-* EMBotnet, etik korsanlar ve sızmacılar için gelişmiş bir botnet araç programı!
+* MEMBotnet, etik korsanlar ve sızmacılar için gelişmiş bir botnet araç programı!
 
 # Kurulum (NOTE: Sadece windows içindir!)
 ### Windows 11 / 10 / 8 / 7
