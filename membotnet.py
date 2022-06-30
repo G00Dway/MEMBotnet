@@ -773,6 +773,7 @@ while True:
                 for z in zombies_list:
                     print(Fore.RED+'[-]'+Fore.RESET+' Zombi kaldırıldı: "'+z+'"')
                     zombies_list.remove(z)
+                zombies_list.clear()
             except:
                 pass
     elif choices == 3:
