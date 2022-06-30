@@ -6,7 +6,7 @@
 ```
 git clone https://github.com/G00Dway/MEMBotnet
 cd MEMBotnet
-membotnet.exe'yi başlat
+membotnet.exe'yi başlat ve ya python/python3 membotnet.py (optimizasyon icin visual studio code'da daha iyi!)
 ```
 ### Linux / GNU
 ```
