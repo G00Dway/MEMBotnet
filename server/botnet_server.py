@@ -33,18 +33,17 @@ except:
 scan = sys.argv[3]
 
 def menu(host=scan):
-    print(Fore.YELLOW+'[+]'+Fore.RESET+' Başarıyla tarandı ve hedef eklendi: "'+host+'"')
-    print(Fore.BLUE+'[i]'+Fore.RESET+' Hedefte açılan bağlantı noktalar taranıyor: "'+host+'"...')
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     socket.setdefaulttimeout(2)
+    closed = []
+    opened = []
     def portscanner(port):
         if sock.connect_ex((host,port)):
-            print(Fore.RED+"[-]"+Fore.RESET+f" Port {port} kapalı")
+            closed.append(port)
         else:
-            print(Fore.YELLOW+"[+]"+Fore.RESET+f" Port {port} açık")
+            opened.append(port)
     for port in range (1, 1000):
         portscanner(port);
-    time.sleep(5)
     sys.exit()
 
 
