@@ -286,12 +286,13 @@ for items in server_port.items():
                 much += 1
             else:
                 pass
-
+server_ports = {}
 MANUAL = False
 ports = []
 selected_port = 0
 addr_port = {}
 current_port = 0
+val = []
 if much > 1:
     print(Fore.MAGENTA+'[!]'+Fore.RESET+" 1'den fazla bağlantı noktası bulduk, bu yüzden lütfen bir tane seçin")
     check.clear()
@@ -310,8 +311,10 @@ if much > 1:
         selected_port += 1
         print(f'{selected_port} - PORT {i}: "{server}"')
         current_port = i
+        val.append(i)
         addr_port[selected_port] = i
     print('-------------------------------------')
+    server_ports[server] = val
     while True:
         port_ = int(input(Fore.LIGHTBLUE_EX+f'~$"{Fore.RESET}{server}{Fore.LIGHTBLUE_EX}" İçin bağlantı noktası seçin: '+Fore.RESET))
         if port_ in addr_port.keys():
@@ -733,10 +736,17 @@ while True:
             else:
                 print("SUNUCULAR")
                 print("----------------------")
+                current_server = ""
                 server_num = 0
                 for i in servers_list:
                     server_num += 1
-                    print(f'$SUNUCU {server_num}: "{i}"')
+                    if i == current_server:
+                        continue
+                    if i in server_ports.keys():
+                        print(f'$SUNUCU {server_num}: "{i}", Port\'lar: {len(server_ports[i])}')
+                    else:
+                        print(f'$SUNUCU {server_num}: "{i}"')
+                    current_server = i
                 print('')
         elif choices == 13:
             if zombies == 0 or zombies_list == []:
