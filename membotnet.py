@@ -26,7 +26,7 @@ except ImportError:
 from win10toast import ToastNotifier
 current_path = os.path.dirname(file)
 lang_file = current_path+'/settings/language/lang.ini'
-read_config = configparser.RawConfigParser()
+# read_config = configparser.RawConfigParser()
 try:
     import wget
 except ImportError:
@@ -92,19 +92,19 @@ except:
     pass
 server = "Sunucu Yok"
 server_port = {}
-read_config.read(lang_file)
-available_langs = ["English", "Japanese", "Turkish"]
-lang_bool = []
-lang_bool.append("English: "+read_config['Lang']['EN'])
-lang_bool.append("Japanese: "+read_config['Lang']['JP'])
-lang_bool.append("Turkish: "+read_config['Lang']['TR'])
-for selected in lang_bool:
-    if "True" in selected:
-        for i in available_langs:
-            if i in selected:
-                lang = i
-                break
-        break
+# read_config.read(lang_file)
+# available_langs = ["English", "Japanese", "Turkish"]
+# lang_bool = []
+# lang_bool.append("English: "+read_config['Lang']['EN'])
+# lang_bool.append("Japanese: "+read_config['Lang']['JP'])
+# lang_bool.append("Turkish: "+read_config['Lang']['TR'])
+# for selected in lang_bool:
+#     if "True" in selected:
+#         for i in available_langs:
+#             if i in selected:
+#                 lang = i
+#                 break
+#         break
 
 zombies_list = []
 servers_list = []
