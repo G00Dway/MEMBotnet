@@ -50,6 +50,13 @@ ddos = False
 local_port = 5555
 trojan_inject_file = ""
 try:
+    if os.path.exists(current_path+'/server/cmd.log'):
+        os.remove(current_path+'/server/cmd.log')
+    else:
+        pass
+except:
+    pass
+try:
     import colorama
 except ImportError:
     print('"colorama" Bulunamadı! lütfen terminala "pip install colorama" yaz!')
