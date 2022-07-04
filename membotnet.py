@@ -853,7 +853,7 @@ while True:
                 print('----------------------------------------')
                 for device in zombies_list:
                     devs += 1
-                    print(Fore.BLUE+'[i]'+Fore.RESET+f' Device No|{devs}: "'+device+'"')
+                    print(Fore.BLUE+'[i]'+Fore.RESET+f' Cihaz No|{devs}: "'+device+'"')
         else:
             print(Fore.RED+'[-]'+Fore.RESET+' Tanınmayan komut/numara: "'+str(choices)+'"')
     except Exception as e:
