@@ -1,3 +1,10 @@
+import sys
+from sys import platform
+if "win" in platform:
+    pass
+else:
+    print('[-] - Afedersiniz! MEMBotnet yalnızca Windows kullanıcıları içindir!')
+    sys.exit()
 import tkinter
 from tkinter import Tk
 from tkinter import *
@@ -6,7 +13,6 @@ import configparser
 import subprocess
 from PIL import *
 import shutil
-import sys
 import webbrowser
 try:
     import termcolor
@@ -34,7 +40,6 @@ except ImportError:
     sys.exit()
 import socket
 from socket import AF_INET, SOCK_STREAM, SOCK_DGRAM
-from sys import platform
 import time
 from PIL import ImageTk
 try:
@@ -62,6 +67,16 @@ except ImportError:
     print('"colorama" Bulunamadı! lütfen terminala "pip install colorama" yaz!')
     sys.exit()
 from colorama import Fore
+import platform as platform_2
+system_enc = sys.getfilesystemencoding()
+system_prc = platform_2.machine()
+system_ver = platform_2.version()
+py_ver = platform_2.python_version()
+syst = "Windows"
+if platform == "win32":
+    syst = "Windows x86-x64"
+else:
+    syst = "Windows x86"
 try:
     if os.path.exists(current_path+'/settings/pyinstaller.txt'):
         pass
@@ -77,6 +92,7 @@ try:
             py.write('pyinstaller = '+pyinstaller)
 except:
     pass
+exe = "pyinstaller"
 try:
     import wrapt_timeout_decorator
     from wrapt_timeout_decorator import *
@@ -342,7 +358,7 @@ Botnet Seçenekleri
 4) Botnet listesi dosyasındaki tüm zombileri kaldırın (Zombi: {Fore.LIGHTGREEN_EX}{zombies}{Fore.RESET}){Fore.LIGHTRED_EX}
 
 Diğer Aletler (MÜSAİT DEĞİL)
------------------------------------------------------------------------------------------{Fore.LIGHTBLACK_EX}
+-----------------------------------------------------------------------------------------{Fore.BLACK}
 - #5) Aktif IP/Web bağlantı noktası tarayıcısı
 - #6) Basit IP/Web DDOS Araçları (botnet yok)
 - #7) IP/Web Toplama Hakkında (whois){Fore.LIGHTMAGENTA_EX}
@@ -402,17 +418,12 @@ Geçersiz Sunucular : {invalid_servers}
 Ölü zombiler       : {invalid_zombies} (Tüm sunucular)
 Ölü sunucular      : {invalid_servers}
 '''
-if "win" in platform:
-    pass
-else:
-    print(Fore.RED+'[-]'+Fore.RESET+' Afedersiniz! MEMBotnet yalnızca Windows kullanıcıları içindir!')
-    sys.exit()
 
 attack = kill()
 def print_etc():
     banner = f'''
 _______  _______  _______  ______   _______ _________ _        _______ _________
-(       )(  ____ \(       )(  ___ \ (  ___  )\__   __/( (    /|(  ____ /__   __/ BOOM!
+(       )(  ____ \(       )(  ___ \ (  ___  )\__   __/( (    /|(  ____ /__   __/ Botnetinizi kontrol edin
 | () () || (    \/| () () || (   ) )| (   ) |   ) (   |  \  ( || (    \/   ) (   
 | || || || (__    | || || || (__/ / | |   | |   | |   |   \ | || (__       | |   
 | |(_)| ||  __)   | |(_)| ||  __ (  | |   | |   | |   | (\ \) ||  __)      | |   
@@ -420,12 +431,11 @@ _______  _______  _______  ______   _______ _________ _        _______ _________
 | )   ( || (____/\| )   ( || )___) )| (___) |   | |   | )  \  || (____/\   | |   
 |/     \|(_______/|/     \||/ \___/ (_______)   )_(   |/    )_)(_______/   )_(  (V.{version})
 
-Hakkımızda
+Hakkımızda (About)
 -----------------------------------------------------------------------                                                  
-- {Fore.LIGHTBLUE_EX}Tarafından yapılmış: {Fore.RESET}G00Dway
-- {Fore.LIGHTGREEN_EX}Krediler gider: {Fore.RESET}Fux
-- {Fore.LIGHTWHITE_EX}Bizim takım: {Fore.RESET}Blest † Boyz {Fore.GREEN}- (Discord)
-
+- {Fore.LIGHTBLUE_EX}Tarafından yapılmış : {Fore.RESET}G00Dway
+- {Fore.LIGHTGREEN_EX}Krediler gider     : {Fore.RESET}Fux
+- {Fore.LIGHTWHITE_EX}Bizim takım        : {Fore.RESET}Blest † Boyz {Fore.GREEN}- (Discord)
 {Fore.RESET}
 '''
 
@@ -454,6 +464,7 @@ else:
     print(Fore.BLUE+'[i]'+Fore.RESET+' Sunucu: "'+server+f'" bağlantıları alıyor! ({Fore.LIGHTGREEN_EX}online{Fore.RESET})')
     port = load[1]
 
+print(Fore.BLUE+'[i]'+Fore.RESET+' Güncellemeler kontrol ediliyor...')
 check_updates()
 while True:
     try:

