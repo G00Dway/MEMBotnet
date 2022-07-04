@@ -13,6 +13,13 @@ python/python3 membotnet.py (optimizasyon icin visual studio code'da daha iyi!)
 Müsait değil ;(
 ```
 
+# Guncelleme:
+```
+İlk önce "zombies" dizinini istediğiniz başka bir dizine taşıyın.
+Ardından MEMBotnet (ana) dizinini kaldırın (silin).
+Ve sadece kurulum adımını tekrar yapın, ancak bundan sonra "zombies" dizinini kaldırın ve daha sonra zaten taşınmış olan "zombies" dizinini yeni MEMBotnet'e taşıyın.
+```
+
 # Credits
 * Krediler gider: `Fux`
 * Grup: Blest Boyz
