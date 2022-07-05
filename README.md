@@ -17,7 +17,7 @@ Müsait değil ;(
 ```
 İlk önce "zombies" dizinini istediğiniz başka bir dizine taşıyın.
 Ardından MEMBotnet (ana) dizinini kaldırın (silin).
-Ve sadece kurulum adımını tekrar yapın, ancak bundan sonra yeni MEMbotnet'deki "zombies" dizinini kaldırın ve daha sonra zaten taşınmış olan "zombies" dizinini yeni MEMBotnet'e taşıyın.
+Ve sadece kurulum adımını tekrar yapın, ancak bundan sonra yeni MEMBotnet'deki "zombies" dizinini kaldırın ve daha sonra zaten taşınmış olan "zombies" dizinini yeni MEMBotnet'e taşıyın.
 ```
 
 # Özellikler
