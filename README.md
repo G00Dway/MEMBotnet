@@ -21,7 +21,7 @@ Ve sadece kurulum adımını tekrar yapın, ancak bundan sonra "zombies" dizinin
 ```
 
 # Özellikler
-- [X] türk halkı tarafından türk halkı için yapılmıştır
+- [X] Türk halkı tarafından türk halkı için yapılmıştır
 - [X] Kendi özel sunucularıyla tam botnet (IP)
 - [ ] Cihazları kontrol edebilir
 - [X] Belirtilen IP Adresine DDOS yapabilir (Tüm bağlı cihazlar ile)
