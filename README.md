@@ -26,7 +26,7 @@ Ve sadece kurulum adımını tekrar yapın, ancak bundan sonra "zombies" dizinin
 - [ ] Cihazları kontrol edebilir
 - [X] Belirtilen IP Adresine DDOS yapabilir (Tüm bağlı cihazlar ile)
 - [X] Tamamen algılanamayan trojan oluşturabilir (FUD)
- -[X] Tespit edilemeyen trojana belirtili python kodunu enjekte edebilir
+- [X] Tespit edilemeyen trojana belirtili python kodunu enjekte edebilir
 
 # Credits
 * Krediler gider: `Fux`
