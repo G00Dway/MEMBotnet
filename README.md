@@ -23,6 +23,7 @@ Ve sadece kurulum adımını tekrar yapın, ancak bundan sonra "zombies" dizinin
 # Özellikler
 - [X] Türk halkı tarafından türk halkı için yapılmıştır
 - [X] Kendi özel sunucularıyla tam botnet (IP)
+- [X] LAN ve WAN üzerinde sunucu oluşturulabilir
 - [ ] Cihazları kontrol edebilir
 - [ ] Hedef cihazlarda yürütmek için belirtilen komutları gönderebilir
 - [ ] Bir arka kapı trojan yaradabilir (Backdoor)
