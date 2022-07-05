@@ -29,6 +29,7 @@ Ve sadece kurulum adımını tekrar yapın, ancak bundan sonra "zombies" dizinin
 - [X] Belirtilen IP Adresine DDOS yapabilir (Tüm bağlı cihazlar ile)
 - [X] Tamamen tespit edilmeyen FUD trojan yaradabilir
 - [X] Tespit edilemeyen FUD trojana belirtili python kodunu enjekte edebilir
+- [X] Python dosyasından yürütülebilir dosya (exe) oluşturabilir
 
 # Credits
 * Krediler gider: `Fux`
