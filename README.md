@@ -25,8 +25,8 @@ Ve sadece kurulum adımını tekrar yapın, ancak bundan sonra "zombies" dizinin
 - [X] Kendi özel sunucularıyla tam botnet (IP)
 - [ ] Cihazları kontrol edebilir
 - [X] Belirtilen IP Adresine DDOS yapabilir (Tüm bağlı cihazlar ile)
-- [X] Tamamen algılanamayan trojan oluşturabilir (FUD)
-- [X] Tespit edilemeyen trojana belirtili python kodunu enjekte edebilir
+- [X] Tamamen tespitlenmeyen FUD trojan oluşturabilir
+- [X] Tespit edilemeyen FUD trojana belirtili python kodunu enjekte edebilir
 
 # Credits
 * Krediler gider: `Fux`
