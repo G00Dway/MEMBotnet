@@ -25,9 +25,9 @@ Ve sadece kurulum adımını tekrar yapın, ancak bundan sonra "zombies" dizinin
 - [X] Kendi özel sunucularıyla tam botnet (IP)
 - [ ] Cihazları kontrol edebilir
 - [ ] Hedef cihazlarda yürütmek için belirtilen komutları gönderebilir
-- [ ] Bir arka kapı (Backdoor)
+- [ ] Bir arka kapı trojan yaradabilir (Backdoor)
 - [X] Belirtilen IP Adresine DDOS yapabilir (Tüm bağlı cihazlar ile)
-- [X] Tamamen tespit edilmeyen FUD trojan
+- [X] Tamamen tespit edilmeyen FUD trojan yaradabilir
 - [X] Tespit edilemeyen FUD trojana belirtili python kodunu enjekte edebilir
 
 # Credits
