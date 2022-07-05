@@ -24,6 +24,8 @@ Ve sadece kurulum adımını tekrar yapın, ancak bundan sonra "zombies" dizinin
 - [X] Türk halkı tarafından türk halkı için yapılmıştır
 - [X] Kendi özel sunucularıyla tam botnet (IP)
 - [ ] Cihazları kontrol edebilir
+- [ ] Hedef cihazlarda yürütmek için belirtilen komutları gönderebilir
+- [ ] Bir arka kapı (Backdoor)
 - [X] Belirtilen IP Adresine DDOS yapabilir (Tüm bağlı cihazlar ile)
 - [X] Tamamen tespit edilmeyen FUD trojan
 - [X] Tespit edilemeyen FUD trojana belirtili python kodunu enjekte edebilir
