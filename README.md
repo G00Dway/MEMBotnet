@@ -31,6 +31,7 @@ Ve sadece kurulum adımını tekrar yapın, ancak bundan sonra yeni MEMBotnet'de
 - [X] Tamamen tespit edilmeyen FUD trojan yaradabilir
 - [X] Tespit edilemeyen FUD trojana belirtili python kodunu enjekte edebilir
 - [X] Python dosyasından yürütülebilir dosya (exe) oluşturabilir
+- [X] Trojan, Raspberry PI gibi diğer cihazlarda veya kameralar, telefonlar ve s. (destekliyorsa ve python varsa) çalıştırılabilir.
 
 # Credits
 * Krediler gider: `Fux`
