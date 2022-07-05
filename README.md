@@ -13,12 +13,20 @@ python/python3 membotnet.py (optimizasyon icin visual studio code'da daha iyi!)
 Müsait değil ;(
 ```
 
-# Guncelleme:
+# Güncellenme:
 ```
 İlk önce "zombies" dizinini istediğiniz başka bir dizine taşıyın.
 Ardından MEMBotnet (ana) dizinini kaldırın (silin).
 Ve sadece kurulum adımını tekrar yapın, ancak bundan sonra "zombies" dizinini kaldırın ve daha sonra zaten taşınmış olan "zombies" dizinini yeni MEMBotnet'e taşıyın.
 ```
+
+# Özellikler
+- [X] türk halkı tarafından türk halkı için yapılmıştır
+- [X] Kendi özel sunucularıyla tam botnet (IP)
+- [ ] Cihazları kontrol edebilir
+- [X] Belirtilen IP Adresine DDOS yapabilir (Tüm bağlı cihazlar ile)
+- [X] Tamamen algılanamayan trojan oluşturabilir (FUD)
+ -[X] Tespit edilemeyen trojana belirtili python kodunu enjekte edebilir
 
 # Credits
 * Krediler gider: `Fux`
