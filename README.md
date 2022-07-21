@@ -4,6 +4,10 @@
 # Kurulum (NOTE: Sadece windows içindir!)
 ### Windows 11 / 10 / 8 / 7
 ```
+Sürümler sayfasından indirin!
+
+ve ya
+------------------------------
 git clone https://github.com/G00Dway/MEMBotnet
 cd MEMBotnet
 python/python3 membotnet.py (optimizasyon icin visual studio code'da daha iyi!)
