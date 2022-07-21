@@ -39,7 +39,11 @@ except ImportError:
 import socket
 from socket import AF_INET, SOCK_STREAM, SOCK_DGRAM
 import time
-from PIL import ImageTk
+try:
+    from PIL import ImageTk
+except ImportError:
+    print('"Pillow" Bulunamadı! lütfen terminala "pip install Pillow" yaz!')
+    sys.exit()
 try:
     import whois
 except ImportError:
