@@ -8,10 +8,8 @@ else:
 import tkinter
 from tkinter import Tk
 from tkinter import *
-import PIL
 import configparser
 import subprocess
-from PIL import *
 import shutil
 import webbrowser
 try:
