@@ -99,7 +99,7 @@ try:
     import wrapt_timeout_decorator
     from wrapt_timeout_decorator import *
 except ImportError:
-    print(Fore.BLUE+'[i]'+Fore.RESET+' Yükleniyor wrap_timeout_decorator... ("pip install https://github.com/bitranox/wrapt-timeout-decorator/archive/master.zip")')
+    print(Fore.BLUE+'[i]'+Fore.RESET+' Yükleniyor wrapt_timeout_decorator... ("pip install https://github.com/bitranox/wrapt-timeout-decorator/archive/master.zip")')
     os.system('pip install https://github.com/bitranox/wrapt-timeout-decorator/archive/master.zip')
     print(Fore.BLUE+'[i]'+Fore.RESET+" Lütfen MEMBotNet'i yeniden başlatın!")
     sys.exit()
