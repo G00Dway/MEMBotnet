@@ -83,12 +83,12 @@ try:
     if os.path.exists(current_path+'/settings/pyinstaller.txt'):
         pass
     else:
-        pyinstaller = input(Fore.CYAN+'[?]'+Fore.RESET+' Sizde "Pyinstaller" yüklü var mı? (Y/n): ')
+        pyinstaller = input('[?] Sizde "Pyinstaller" yüklü var mı? (Y/n): ')
         char = "yYESyesY"
         if pyinstaller in char:
             pass
         else:
-            print(Fore.BLUE+'[i]'+Fore.RESET+' PyInstaller yükleniyor...')
+            print('[i] PyInstaller yükleniyor...')
             os.system('pip install pyinstaller')
         with open(current_path+'/settings/pyinstaller.txt', "w") as py:
             py.write('pyinstaller = '+pyinstaller)
@@ -96,17 +96,17 @@ except:
     pass
 exe = "pyinstaller"
 try:
-    import wrapt_timeout_decorator
-    from wrapt_timeout_decorator import *
-except ImportError:
-    print(Fore.BLUE+'[i]'+Fore.RESET+' Yükleniyor wrapt_timeout_decorator... ("pip install https://github.com/bitranox/wrapt-timeout-decorator/archive/master.zip")')
-    os.system('pip install https://github.com/bitranox/wrapt-timeout-decorator/archive/master.zip')
-    print(Fore.BLUE+'[i]'+Fore.RESET+" Lütfen MEMBotNet'i yeniden başlatın!")
-    sys.exit()
-try:
     import requests
 except ImportError:
     print('"requests" Bulunamadı! lütfen terminala "pip install requests" yaz!')
+    sys.exit()
+try:
+    import wrapt_timeout_decorator
+    from wrapt_timeout_decorator import *
+except ImportError:
+    print('[i] Yükleniyor wrapt_timeout_decorator... ("pip install https://github.com/bitranox/wrapt-timeout-decorator/archive/master.zip")')
+    os.system('pip install https://github.com/bitranox/wrapt-timeout-decorator/archive/master.zip')
+    print(Fore.BLUE+'[i]'+Fore.RESET+" Lütfen MEMBotNet'i yeniden başlatın!")
     sys.exit()
 try:
     if os.path.exists(current_path+"/output"):
@@ -280,9 +280,9 @@ def exit_program():
         task_pythonw = subprocess.getoutput('taskkill /IM pythonw.exe /F')
         task_server = subprocess.getoutput('taskkill /IM membotnet_server.exe /F')
         task_non_stop = subprocess.getoutput('taskkill /IM botnet_server.py /F')
-        task_non_stop_w = subprocess.getoutput('taskkill /IM botnet_server.pyw /F')
+        # task_non_stop_w = subprocess.getoutput('taskkill /IM botnet_server.pyw /F')
         task_non_stop_server = subprocess.getoutput('taskkill /IM botnet_server.exe /F')
-        pip = subprocess.getoutput('taskkill /IM pip.exe /F')
+        # pip = subprocess.getoutput('taskkill /IM pip.exe /F')
     except:
         pass
     print(Fore.YELLOW+'[+]'+Fore.RESET+' Çıkılıyor...')
@@ -751,7 +751,7 @@ while True:
                     print(Fore.YELLOW+'[+]'+Fore.RESET+' Çıktı klasörü zaten var, atlıyorum...')
                 questions()
         elif choices == 14:
-            if servers_list == [] or server == "Sunucu Yok":
+            if servers_list == [] or servers_list == ['\n']:
                 print(Fore.RED+'[-]'+Fore.RESET+' Sunucu(lar) yok!')
             else:
                 print("SUNUCULAR")
